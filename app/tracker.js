@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import * as Location from 'expo-location';
 
-export const LocationTracker = () => {
+export const LocationTracker = (props) => {
   const [location, setLocation] = useState(null);
 
   useEffect(() => {
@@ -33,9 +33,13 @@ export const LocationTracker = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      {location ? (
+    <View style={styles.datacontainer}>
+      {location && props.licenseNumber ? (
         <Text style={styles.locationText}>
+          {props.licenseNumber ? (
+            <>Kennzeichen: <Text key="license">{props.licenseNumber}</Text></>
+          ) : null}
+          {'\n'}
           Latitude: {location.coords.latitude}
           {'\n'}
           Longitude: {location.coords.longitude}
@@ -48,15 +52,26 @@ export const LocationTracker = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  datacontainer: {
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: "#2A304E",
+    borderRadius: 5,
+    padding: 40,
   },
   locationText: {
-    fontSize: 16,
-    textAlign: 'center',
+    flex: 1,
+    fontSize: 20,
+    textAlign: 'left',
+    color:"white",
+    margin: 10,
+    lineHeight: 30
+    
   },
+  values:{
+    marginLeft: 20,
+    color: "#3468B0"
+  }
 });
 
 export default LocationTracker;
