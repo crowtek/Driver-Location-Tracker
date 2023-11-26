@@ -3,6 +3,7 @@ import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {LocationTracker} from './Components/LocationTracker';
 
 import PlateNumberInput from './Components/PlateNumberInput';
+import StartButton from './Components/StartButton';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
@@ -27,11 +28,11 @@ const App = () => {
       {showInput ? (
         <View style={styles.inputContainer}>
           <PlateNumberInput inputValue={inputValue} handleInputChange={handleInputChange}/>
+          <StartButton handleButtonPress={handleButtonPress}/>
 
-          <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
-            <Text style={styles.buttonText} >Los gehts</Text>
-          </TouchableOpacity>
-        </View>) :(
+        </View>) :
+
+        (
           <View style={styles.hiddenDiv}>
             <Text style={styles.editText}>{plateName}</Text>
             <TouchableOpacity style={styles.editButton} onPress={handleEditButtonPress}>
@@ -63,23 +64,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor:"white",
   },
-  button:{
-    width: "90%",
-    height: 50,
-    backgroundColor: "#2A304E",
-    borderRadius: 5,
-    padding: 10,
-    justifyContent: "center",
-    alignItems: "center"
-  },
   image: {
     width: 30,
     height: 30,
     tintColor: 'white' 
-  },
-  buttonText:{
-    color: "white",
-    fontSize: 18
   },
   hiddenDiv:{
     zIndex: 5,
