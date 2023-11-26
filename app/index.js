@@ -38,14 +38,13 @@ const App = () => {
           <View style={styles.hiddenDiv}>
             <Text style={styles.editText}>{plateName}</Text>
             <TouchableOpacity style={styles.editButton} onPress={handleEditButtonPress}>
-              <Image source={require('./edit.png')}style={styles.editImage}/>
+              <Image source={require('../assets/edit.png')}style={styles.editImage}/>
             </TouchableOpacity>
           </View>
         )
       }
 
       <Text><LocationTracker licenseNumber={plateName}/></Text>
-      <Image source={require('./logo.png')}style={styles.backgroundLogo}/>
     </View>
   );
 };
