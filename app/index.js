@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, ImageBackground, StyleSheet, Text } from 'react-native';
 import {LocationTracker} from './Components/LocationTracker';
 
 import PlateNumberInput from './Components/PlateNumberInput';
@@ -25,7 +25,11 @@ const App = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ImageBackground
+    source={require('../assets/background.jpg')} 
+    style={styles.container}
+    resizeMode="cover"
+  >
       {showInput ? (
         <View style={styles.inputContainer}>
           <PlateNumberInput inputValue={inputValue} handleInputChange={handleInputChange}/>
@@ -41,7 +45,7 @@ const App = () => {
       }
 
       <Text><LocationTracker licenseNumber={plateName}/></Text>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
+    height:"100vh",
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: 20,
@@ -72,11 +77,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection:"row"
   },
-  editButton:{
-    width: 40,
-    height: 40,
-    padding: 5
-  },
   editText:{
     flex:1,
     padding:10,
@@ -84,17 +84,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
   },
-  editImage: {
-    width: 30,
-    height: 30,
-  },
-  backgroundLogo:{
-    position: "absolute",
-    top: 30,
-    left:0,
-    width: 100,
-    height:100
-  }
 });
 
 export default App;
