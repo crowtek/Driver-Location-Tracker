@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import {LocationTracker} from './tracker';
+import {LocationTracker} from './Components/LocationTracker';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
