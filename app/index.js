@@ -30,6 +30,8 @@ const App = () => {
     style={styles.container}
     resizeMode="cover"
   >
+      <LocationTracker licenseNumber={plateName}/>
+
       {showInput ? (
         <View style={styles.inputContainer}>
           <PlateNumberInput inputValue={inputValue} handleInputChange={handleInputChange}/>
@@ -44,7 +46,7 @@ const App = () => {
         )
       }
 
-      <Text><LocationTracker licenseNumber={plateName}/></Text>
+
     </ImageBackground>
   );
 };
@@ -57,7 +59,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: "white",
   },
   inputContainer: {
     zIndex: 5,
@@ -65,16 +66,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:"white",
-  },
-  image: {
-    width: 30,
-    height: 30,
-    tintColor: 'white' 
   },
   hiddenDiv:{
     zIndex: 5,
-    backgroundColor: "white",
     flexDirection:"row"
   },
   editText:{
@@ -83,6 +77,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
+    backgroundColor:"white"
   },
 });
 
