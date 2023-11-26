@@ -4,6 +4,7 @@ import {LocationTracker} from './Components/LocationTracker';
 
 import PlateNumberInput from './Components/PlateNumberInput';
 import StartButton from './Components/StartButton';
+import EditButton from './Components/EditButton';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
@@ -29,15 +30,12 @@ const App = () => {
         <View style={styles.inputContainer}>
           <PlateNumberInput inputValue={inputValue} handleInputChange={handleInputChange}/>
           <StartButton handleButtonPress={handleButtonPress}/>
-
-        </View>) :
-
+        </View>
+        ) :
         (
           <View style={styles.hiddenDiv}>
             <Text style={styles.editText}>{plateName}</Text>
-            <TouchableOpacity style={styles.editButton} onPress={handleEditButtonPress}>
-              <Image source={require('../assets/edit.png')}style={styles.editImage}/>
-            </TouchableOpacity>
+            <EditButton handleEditButtonPress={handleEditButtonPress}/>
           </View>
         )
       }
