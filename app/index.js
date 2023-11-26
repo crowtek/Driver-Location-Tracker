@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, TextInput, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {LocationTracker} from './Components/LocationTracker';
+
+import PlateNumberInput from './Components/PlateNumberInput';
 
 const App = () => {
   const [inputValue, setInputValue] = useState('');
@@ -24,13 +26,8 @@ const App = () => {
     <View style={styles.container}>
       {showInput ? (
         <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            onChangeText={handleInputChange}
-            value={inputValue}
-            placeholder="Kennzeichen Eingeben ..."
-            placeholderTextColor="gray"
-          />
+          <PlateNumberInput inputValue={inputValue} handleInputChange={handleInputChange}/>
+
           <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
             <Text style={styles.buttonText} >Los gehts</Text>
           </TouchableOpacity>
@@ -65,17 +62,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor:"white",
-  },
-  input: {
-    width: "90%",
-    height: 55,
-    color: "#2A304E",
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    marginBottom: 10,
-    fontSize: 20
   },
   button:{
     width: "90%",
