@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import StartPage from './pages/Start';
+import StartPage from './pages/StartPage';
 import InfoPage from './pages/Info';
 
 const App = () => {
