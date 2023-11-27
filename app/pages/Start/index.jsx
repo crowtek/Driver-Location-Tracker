@@ -1,11 +1,11 @@
 import { View, ImageBackground, StyleSheet } from 'react-native';
-import StartButton from '../Components/StartButton';
-import Title from '../Components/Title';
+import StartButton from './components/StartButton';
+import Title from './components/Title';
 
 const StartPage = ({handleStart}) => {
     return (
         <ImageBackground
-            source={require('../../assets/background.jpg')} 
+            source={require('./components/background.jpg')} 
             style={styles.container}
             resizeMode="cover"
         >
