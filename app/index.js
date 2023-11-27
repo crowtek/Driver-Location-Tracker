@@ -2,23 +2,15 @@ import React, { useState } from 'react';
 import { View, ImageBackground, StyleSheet, Text } from 'react-native';
 import {LocationTracker} from './Components/LocationTracker';
 
-import PlateNumberInput from './Components/PlateNumberInput';
 import StartButton from './Components/StartButton';
 import EditButton from './Components/EditButton';
+import Title from './Components/Title';
 
 const App = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [plateName, setPlateName]  = useState('');
   const [showInput, setShowInput] = useState(true);
 
-  const handleInputChange = (text) => {
-    setInputValue(text);
-  };
-
   const handleButtonPress = () => {
-    setPlateName(inputValue.toUpperCase());
     setShowInput(false);
-    setInputValue("");
   };
   const handleEditButtonPress = () => {
     setShowInput(true);
@@ -30,17 +22,15 @@ const App = () => {
     style={styles.container}
     resizeMode="cover"
   >
-      <LocationTracker licenseNumber={plateName}/>
 
       {showInput ? (
         <View style={styles.inputContainer}>
-          <PlateNumberInput inputValue={inputValue} handleInputChange={handleInputChange}/>
+          <Title />
           <StartButton handleButtonPress={handleButtonPress}/>
         </View>
         ) :
         (
           <View style={styles.hiddenDiv}>
-            <Text style={styles.editText}>{plateName}</Text>
             <EditButton handleEditButtonPress={handleEditButtonPress}/>
           </View>
         )
@@ -53,11 +43,10 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: "100%",
-    height:"100vh",
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    height:"100dvh",
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
     padding: 20,
   },
   inputContainer: {
