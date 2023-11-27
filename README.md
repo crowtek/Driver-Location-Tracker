@@ -1,14 +1,5 @@
-# Expo Router Example
+# A Simple Truck Position Tracker
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+## I Build it with React Native and Expo
 
-## 🚀 How to use
-
-```sh
-npx create-expo-app -e with-router
-```
-
-## 📝 Notes
-
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+![Alt text](Test.png)
