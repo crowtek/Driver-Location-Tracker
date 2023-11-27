@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import {  StyleSheet } from 'react-native';
-
 import StartPage from './pages/Start';
+import InfoPage from './pages/Info';
 
 const App = () => {
   const [start, setStart] = useState(false);
@@ -12,7 +11,7 @@ const App = () => {
 
   return (
     <>
-    {start ? (<></>) :(<StartPage handleStart={handleStart} />)}
+    {start ? (<InfoPage handleEnd={handleStart} />) :(<StartPage handleStart={handleStart} />)}
     </>
 
   );

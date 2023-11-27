@@ -31,17 +31,5 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    hiddenDiv:{
-      zIndex: 5,
-      flexDirection:"row"
-    },
-    editText:{
-      flex:1,
-      padding:10,
-      borderColor: 'gray',
-      borderWidth: 1,
-      borderRadius: 5,
-      backgroundColor:"white"
-    },
   });
 export default StartPage;
