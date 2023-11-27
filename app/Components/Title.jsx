@@ -1,6 +1,14 @@
 import {  View,StyleSheet, Text } from 'react-native';
+import {useFonts,Poppins_500Medium,Poppins_700Bold,} from '@expo-google-fonts/poppins';
 
 const Title = () => {
+    let [fontsLoaded] = useFonts({
+        Poppins_500Medium,
+    });
+    if (!fontsLoaded) {
+     return null;
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Full</Text>
@@ -10,6 +18,7 @@ const Title = () => {
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     container: {
         width:"100%",
@@ -19,6 +28,9 @@ const styles = StyleSheet.create({
       color: "white",
       fontSize: "3rem",
       textAlign:"left",
+      lineHeight: "60px",
+      fontFamily: 'Poppins_500Medium', 
     },
-  });
+});
+
 export default Title;
