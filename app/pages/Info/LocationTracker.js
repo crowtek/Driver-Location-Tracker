@@ -36,6 +36,7 @@ export const LocationTracker = (props) => {
     <View style={styles.datacontainer}>
       {location ? (
         <>
+          <Text style={styles.title}>Current Location</Text>
           <Text style={styles.locationText}>Latitude: {location.coords.latitude}</Text>
           <Text style={styles.locationText}>Longitude: {location.coords.longitude}</Text>
         </>
@@ -49,25 +50,22 @@ export const LocationTracker = (props) => {
 
 const styles = StyleSheet.create({
   datacontainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: "#1c2832",
-    borderRadius: 5,
-    padding: 40,
+    borderRadius: 20,
+    padding: 20,
+  },
+  title:{
+    fontSize: 22,
+    color:"white",
+    fontFamily: 'Poppins_500Medium', 
   },
   locationText: {
-    flex: 1,
-    fontSize: 20,
-    textAlign: 'left',
+    fontSize: 18,
     color:"white",
-    margin: 10,
-    lineHeight: 30
-    
+    fontFamily: 'Poppins_500Medium', 
   },
-  values:{
-    marginLeft: 20,
-    color: "#3468B0"
-  }
 });
 
 export default LocationTracker;
