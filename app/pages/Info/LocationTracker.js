@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import * as Location from 'expo-location';
+import geolib from 'geolib';
+import { getDistance } from 'geolib';
+// Define two points with latitude and longitude
+const point1 = { latitude: 52.518611, longitude: 13.408056 }; // Example coordinates (Berlin)
+const point2 = { latitude: 48.856613, longitude: 2.352222 };  // Example coordinates (Paris)
+
+// Calculate the distance
+// const distance = geolib.getDistance(point1, point2);
+
+// console.log(distance); // Distance in meters
+
 
 export const LocationTracker = (props) => {
   const [location, setLocation] = useState(null);
+
 
   useEffect(() => {
     // Request permission to access the user's location
