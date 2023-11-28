@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   datacontainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: "#2A304E",
+    backgroundColor: "#1c2832",
     borderRadius: 5,
     padding: 40,
   },
