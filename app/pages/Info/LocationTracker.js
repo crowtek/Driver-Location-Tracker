@@ -34,16 +34,12 @@ export const LocationTracker = (props) => {
 
   return (
     <View style={styles.datacontainer}>
-      {location && props.licenseNumber ? (
-        <Text style={styles.locationText}>
-          {props.licenseNumber ? (
-            <>Kennzeichen: <Text key="license">{props.licenseNumber}</Text></>
-          ) : null}
-          {'\n'}
-          Latitude: {location.coords.latitude}
-          {'\n'}
-          Longitude: {location.coords.longitude}
-        </Text>
+      {location ? (
+        <>
+          <Text style={styles.locationText}>Latitude: {location.coords.latitude}</Text>
+          <Text style={styles.locationText}>Longitude: {location.coords.longitude}</Text>
+        </>
+
       ) : (
         <Text style={styles.locationText}>Fetching location...</Text>
       )}
